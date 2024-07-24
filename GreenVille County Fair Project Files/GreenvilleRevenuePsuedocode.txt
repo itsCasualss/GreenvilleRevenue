@@ -1,0 +1,58 @@
+Class GreenvilleRevenue Implements IAssignment
+  Method Run()
+    Declare constant ticketPrice as 25
+    Declare variable motto as "The stars shine in Greenville."
+    Call method DisplayMotto with motto
+
+    Declare variable exit as false
+    While exit is false
+      Call method DisplayMenu
+      Read key choice from console (without displaying it)
+      Switch choice
+        Case '1'
+          Output "1"
+          Call method CalculateRevenue with ticketPrice
+        Case '2'
+          Output "2"
+          Output "Thank you for using the Greenville Revenue App, good-bye!"
+          Set exit to true
+        Default
+          Output "Invalid choice. Please enter 1 or 2."
+      End Switch
+    End While
+  End Method
+
+  Method DisplayMotto(motto)
+    Output newline
+    Output "************************************"
+    Output "*  " + motto + "  *"
+    Output "************************************"
+  End Method
+
+  Method DisplayMenu()
+    Output newline
+    Output "Please Enter the following number below from the following menu:"
+    Output "1. CALCULATE Greenville Revenue Year-Over-Year"
+    Output "2. Exit"
+  End Method
+
+  Method CalculateRevenue(ticketPrice)
+    Output newline
+    Output "Enter the number of contestants last year:"
+    Read lastYearContestants from console
+
+    Output newline
+    Output "Enter the number of contestants this year:"
+    Read thisYearContestants from console
+
+    Declare variable revenue as thisYearContestants * ticketPrice
+    Declare variable isBigger as thisYearContestants > lastYearContestants
+
+    Output newline
+    Output "Last year's competition had " + lastYearContestants + " contestants, and this year's has " + thisYearContestants + " contestants."
+    Output "Revenue expected this year is $" + revenue (formatted with commas)
+    Output "It is " + (isBigger ? "true" : "false") + " that this year's competition is bigger than last year's."
+
+    Call method DisplayMotto with "The stars shine in Greenville."
+  End Method
+End Class
