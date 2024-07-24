@@ -1,6 +1,6 @@
 using System;
 
-public class GreenvilleRevenue : IAssignment 
+public class GreenvilleRevenuev01 : IAssignment 
 {
     public void Run()
     {
